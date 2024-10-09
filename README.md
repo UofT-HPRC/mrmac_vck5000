@@ -2,7 +2,7 @@
 
 A- Creating the MRMAC block diagram
 
-   1- mrmac_block_design/mrmac_bd.tcl creates a block diagram for an MRMAC core in an Independent 384b Non-segmented mode in Vivado 2023.1. It has the following interfaces:
+   1- `mrmac_bd.tcl` creates a block diagram for an MRMAC core in an Independent 384b Non-segmented mode in Vivado 2023.1. It has the following interfaces:
    - s_axi_0 interface is used to dynamically configure the MRMAC from the host
    - GT_Serial interface for the transceiver
    - mrmac_tx interface is the axis_tx of the MRMAC core: this needs to be connected to the user logic
@@ -13,7 +13,7 @@ A- Creating the MRMAC block diagram
 
       In the current diagram, the channels tx/rx rates, and the gt_reset_all_in are connected to constants. However, you can replace the constants with GPIOs and dynamically assign their values from the host side. The host code for the GPIOs is provided in the `host.cpp` code in comments.
 
-   2- `mrmac_block_design/mrmac_bd.xml` is a file used to package the MRMAC block design into an `.xo` file for Vitis. After packaging the block design in Vivado, you can use the following TCL command to overwrite the generated `.xo` file using this `.xml` file:
+   2- `mrmac_bd.xml` is a file used to package the MRMAC block design into an `.xo` file for Vitis. After packaging the block design in Vivado, you can use the following TCL command to overwrite the generated `.xo` file using this `.xml` file:
 
       package_xo -xo_path "path_to_initial_xo_file" -kernel_name mrmac_bd -ip_directory "path_to_packaged_ip_directory" -kernel_xml "path_to_mrmac_bd.xml" -force
 
