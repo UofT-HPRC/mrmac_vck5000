@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root versionMajor="1" versionMinor="6">
+  <kernel name="mrmac_bd" language="ip_c" vlnv="user.org:user:mrmac_bd:1.0" attributes="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" interrupt="false" hwControlProtocol="ap_ctrl_hs">
+    <ports>
+      <port name="s_axi_0"    		     mode="slave"        range="0x4000" dataWidth="32"  portType="addressable" base="0x0"/>
+      <port name="mrmac_tx"                  mode="write_only"   range=""       dataWidth="384" portType="stream"/>
+      <port name="mrmac_rx"                  mode="read_only"   range=""       dataWidth="384" portType="stream"/>
+      
+    </ports>
+    <args>
+      <!-- MRMAC Register Map-->
+      <arg name="revision_reg"                        addressQualifier="0" id="0"  port="s_axi_0" size="0x4" offset="0x0000" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="reset_reg_0"                         addressQualifier="0" id="1"  port="s_axi_0" size="0x4" offset="0x0004" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="mode_reg_0"                          addressQualifier="0" id="2"  port="s_axi_0" size="0x4" offset="0x0008" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="configuration_tx_reg1_0"             addressQualifier="0" id="3"  port="s_axi_0" size="0x4" offset="0x000C" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="configuration_rx_reg1_0"             addressQualifier="0" id="4"  port="s_axi_0" size="0x4" offset="0x0010" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="tick_reg_0"                          addressQualifier="0" id="5"  port="s_axi_0" size="0x4" offset="0x002C" type="uint" hostOffset="0x00" hostSize="0x4"/>
+
+      <arg name="stat_rx_status_reg1_0"               addressQualifier="0" id="6"  port="s_axi_0" size="0x4" offset="0x0744" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_rx_rt_status_reg1_0"            addressQualifier="0" id="7"  port="s_axi_0" size="0x4" offset="0x074C" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="fec_configuration_reg1_0"            addressQualifier="0" id="8"  port="s_axi_0" size="0x4" offset="0x00D0" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="fec_configuration_reg1_1"            addressQualifier="0" id="9"  port="s_axi_0" size="0x4" offset="0x10D0" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="fec_configuration_reg1_2"            addressQualifier="0" id="10" port="s_axi_0" size="0x4" offset="0x20D0" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="fec_configuration_reg1_3"            addressQualifier="0" id="11" port="s_axi_0" size="0x4" offset="0x30D0" type="uint" hostOffset="0x00" hostSize="0x4"/>
+
+      <arg name="stat_tx_total_packets_0_lsb"         addressQualifier="0" id="12" port="s_axi_0" size="0x4" offset="0x0818" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_tx_total_packets_0_msb"         addressQualifier="0" id="13" port="s_axi_0" size="0x4" offset="0x081C" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_tx_total_good_packets_0_lsb"    addressQualifier="0" id="14" port="s_axi_0" size="0x4" offset="0x0820" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_tx_total_good_packets_0_msb"    addressQualifier="0" id="15" port="s_axi_0" size="0x4" offset="0x0824" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_tx_total_bytes_0_lsb"           addressQualifier="0" id="16" port="s_axi_0" size="0x4" offset="0x0828" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_tx_total_bytes_0_msb"           addressQualifier="0" id="17" port="s_axi_0" size="0x4" offset="0x082C" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_tx_total_good_bytes_0_lsb"      addressQualifier="0" id="18" port="s_axi_0" size="0x4" offset="0x0830" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_tx_total_good_bytes_0_msb"      addressQualifier="0" id="19" port="s_axi_0" size="0x4" offset="0x0834" type="uint" hostOffset="0x00" hostSize="0x4"/>
+
+      <arg name="stat_rx_total_packets_0_lsb"         addressQualifier="0" id="20" port="s_axi_0" size="0x4" offset="0x0E30" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_rx_total_packets_0_msb"         addressQualifier="0" id="21" port="s_axi_0" size="0x4" offset="0x0E34" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_rx_total_good_packets_0_lsb"    addressQualifier="0" id="22" port="s_axi_0" size="0x4" offset="0x0E38" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_rx_total_good_packets_0_msb"    addressQualifier="0" id="23" port="s_axi_0" size="0x4" offset="0x0E3C" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_rx_total_bytes_0_lsb"           addressQualifier="0" id="24" port="s_axi_0" size="0x4" offset="0x0E40" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_rx_total_bytes_0_msb"           addressQualifier="0" id="25" port="s_axi_0" size="0x4" offset="0x0E44" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_rx_total_good_bytes_0_lsb"      addressQualifier="0" id="26" port="s_axi_0" size="0x4" offset="0x0E48" type="uint" hostOffset="0x00" hostSize="0x4"/>
+      <arg name="stat_rx_total_good_bytes_0_msb"      addressQualifier="0" id="27" port="s_axi_0" size="0x4" offset="0x0E4C" type="uint" hostOffset="0x00" hostSize="0x4"/>
+
+      <arg name="mrmac_tx" addressQualifier="4" id="28" port="mrmac_tx" size="0x0" offset="0x0" hostOffset="0x0" hostSize="0x0" memSize="0" type="stream&lt;ap_axiu&lt;384,0,0,0>>&amp;" />
+      <arg name="mrmac_rx" addressQualifier="4" id="29" port="mrmac_rx" size="0x0" offset="0x0" hostOffset="0x0" hostSize="0x0" memSize="0" type="stream&lt;ap_axiu&lt;384,0,0,0>>&amp;" />
+
+    </args>
+  </kernel>
+</root>
